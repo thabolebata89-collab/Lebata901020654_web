@@ -75,13 +75,17 @@ Open the local URL printed by Vite, usually `http://localhost:5173`.
 
 ## Run Without a Development Server
 
-Build the standalone demo, then double-click the project-root `index.html` (it opens the built app from `dist`), or open `dist/index.html` directly:
+Build the standalone demo, then double-click the project-root `index.html` (it opens the built app from `pages-build`), or open `pages-build/index.html` directly:
 
 ```bash
 npm run build
 ```
 
-The built HTML bundles the app into one file and can be opened directly from disk. Keep the `dist/images` folder alongside it for local imagery. Google Fonts require an internet connection; the app falls back to system fonts if they are unavailable. Do not open `src/main.jsx` directly.
+The built HTML bundles the app into one file and can be opened directly from disk. Keep the `pages-build/images` folder alongside it for local imagery. Google Fonts require an internet connection; the app falls back to system fonts if they are unavailable. Do not open `src/main.jsx` directly.
+
+## Publish on GitHub Pages
+
+The GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys the site whenever code is pushed to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. After the workflow succeeds, the website is available at `https://thabolebata89-collab.github.io/Lebata901020654_web/`.
 
 Check the source and create a production build with:
 

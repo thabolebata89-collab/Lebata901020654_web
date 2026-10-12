@@ -15,7 +15,12 @@ function standaloneHtml() {
         throw new Error('Unable to create standalone HTML: build output is missing index.html or its entry script.')
       }
 
-      const css = stylesheet ? String(stylesheet.source).replaceAll('/images/', './images/') : ''
+      const css = stylesheet
+        ? String(stylesheet.source)
+            .replaceAll('/Lebata901020654_web/images/', './images/')
+            .replaceAll('../images/', './images/')
+            .replaceAll('/images/', './images/')
+        : ''
 
       let output = html.source.replace(
         /<script\b[^>]*\bsrc="[^"]+\.js"[^>]*><\/script>/,
@@ -26,6 +31,7 @@ function standaloneHtml() {
           /<link\b(?=[^>]*\brel="stylesheet")[^>]*>/,
           () => `<style>${css.replace(/<\/style/gi, '<\\/style')}</style>`,
         )
+        output = output.replaceAll('url(../images/', 'url(./images/')
         delete bundle[stylesheet.fileName]
       }
 
@@ -37,5 +43,9 @@ function standaloneHtml() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Lebata901020654_web/',
+  build: {
+    outDir: 'pages-build',
+  },
   plugins: [react(), standaloneHtml()],
 })
