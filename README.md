@@ -1,6 +1,6 @@
 # Khanya Library
 
-Community library management system. **Knowledge that lights the way.** Built with React, Vite, React Router v6, plain CSS, and browser Local Storage.
+Community library management system. **Knowledge that lights the way.** Built with React, Vite, React Router v6, plain CSS and browser Local Storage.
 
 ## Project Structure
 
@@ -55,11 +55,11 @@ khanya-library/
 ```
 ## Features
 
-- Add, edit, search, and delete books. ISBN shape, duplicate ISBN, required fields, and whole-number quantities are validated.
-- Record arrivals and borrows; members can return borrowed copies. Borrow quantities cannot exceed stock, and returns restore availability. Activity history includes date, book, type, quantity, and member where signed in.
+- Add, edit, search  and delete books. ISBN shape, duplicate ISBN, required fields, and whole number quantities are validated.
+- Record arrivals and borrows; members can return borrowed copies. Borrow quantities cannot exceed stock and returns restore availability. Activity history includes date, book, type, quantity and member where signed in.
 - Admins and librarians can manage books and record stock activity. Members and signed-out visitors can view the collection and transaction history but cannot change them.
-- Sign in using a member name and ID, and persist the session across refreshes. Only signed-in admins can view membership IDs or add, update, and delete accounts.
-- View live title, copy, and low-stock counts; inventory badges distinguish out of stock, low stock, and in stock.
+- Sign in using a member name and ID and persist the session across refreshes. Only signed in admins can view membership IDs or add, update and delete accounts.
+- View live title, copy, and low stock counts; inventory badges distinguish out of stock, low stock and in stock.
 - First launch seeds ten books, six members, and six recent sample transactions if Khanya's library data is empty. Existing records are not overwritten.
 
 ## Run Locally
@@ -75,7 +75,7 @@ Open the local URL printed by Vite, usually `http://localhost:5173`.
 
 ## Run Without a Development Server
 
-Build the standalone demo, then double-click the project-root `index.html` (it opens the built app from `pages-build`), or open `pages-build/index.html` directly:
+Build the standalone demo, then double-click the project root `index.html` (it opens the built app from `pages-build`), or open `pages-build/index.html` directly:
 
 ```bash
 npm run build
@@ -103,4 +103,4 @@ npm run preview
 
 ## Local Data
 
-The browser stores data under `kl_books`, `kl_members`, `kl_transactions`, and `kl_session`. Data is local to the browser profile and is not synchronized. The name-and-membership-ID login is for demonstration only, not secure authentication for real member data. Role checks are client-side because this assignment uses browser Local Storage rather than a server.
+The browser stores data under `kl_books`, `kl_members`, `kl_transactions`, and `kl_session`. Data is local to the browser profile and is not synchronized. The name and membership ID login is for demonstration only, not secure authentication for real member data. Role checks are client-side because this assignment uses browser Local Storage rather than a server.
